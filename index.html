@@ -3,16 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Osterneck Paralegal Associates, LLC | opallc.co</title>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -35,11 +29,6 @@ body {
   background: var(--white);
 }
 
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
 nav {
   position: fixed;
   top: 0;
@@ -59,29 +48,17 @@ nav a {
   font-weight: 500;
 }
 
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
 .hero {
   min-height: 100vh;
-
   background:
-    linear-gradient(
-      rgba(26,39,68,0.72),
-      rgba(26,39,68,0.72)
-    ),
+    linear-gradient(rgba(26,39,68,0.72), rgba(26,39,68,0.72)),
     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80')
-    center / cover no-repeat;
-
+    center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   padding: 2rem;
   padding-top: 4rem;
 }
@@ -90,38 +67,26 @@ nav a {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   color: var(--white);
-
   line-height: 1.15;
-
   max-width: 700px;
-
   margin-bottom: 1rem;
 }
 
 .hero p {
   color: rgba(255,255,255,0.8);
   font-size: 1rem;
-
   margin-bottom: 2rem;
 }
 
 .btn {
   display: inline-block;
-
   padding: 0.8rem 2rem;
-
   border: 2px solid var(--white);
-
   color: var(--white);
-
   text-decoration: none;
-
   font-size: 0.9rem;
   font-weight: 500;
-
-  transition:
-    background 0.2s,
-    color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .btn:hover {
@@ -131,92 +96,47 @@ nav a {
 
 .hero-cards {
   display: flex;
-
   gap: 1px;
-
   margin-top: 3rem;
-
   width: 100%;
   max-width: 750px;
 }
 
 .hero-card {
   flex: 1;
-
   background: rgba(255,255,255,0.12);
-
   padding: 1.5rem 1rem;
-
   text-align: center;
 }
 
 .hero-card h3 {
   color: var(--white);
-
   font-size: 0.95rem;
   font-weight: 500;
-
   margin-bottom: 0.4rem;
 }
 
 .hero-card p {
   color: rgba(255,255,255,0.65);
-
   font-size: 0.8rem;
 }
 
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-/*
-   IMPORTANT FIX:
-
-   The previous layout used:
-       grid-template-columns: 1fr 1fr;
-
-   That made the left column too narrow for the complete
-   "Trusted Attorney-at-Law Support" heading.
-
-   The left column is now intentionally wider.
-*/
+/* ABOUT */
 
 .about {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(0, 0.8fr);
-
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
-
   padding: 6rem 10%;
-
   align-items: center;
 }
 
-
-/*
-   The heading itself is deliberately constructed as
-   exactly two lines.
-
-   Line 1:
-   Trusted Attorney-at-Law Support
-
-   Line 2:
-   Since 2012
-*/
-
 .about-text h2 {
   font-family: 'Playfair Display', serif;
-
   font-size: clamp(1.8rem, 2.65vw, 2.5rem);
-
   color: var(--navy);
-
   line-height: 1.2;
-
   margin-bottom: 1.2rem;
 }
 
@@ -229,220 +149,153 @@ nav a {
   white-space: nowrap;
 }
 
-.about-heading-secondary {
-  margin-top: 0.05em;
-}
-
 .about-text p {
   color: var(--muted);
-
   line-height: 1.8;
-
-  font-size: 0.95rem;
-
+  font-size: 0.88rem;
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 .btn-solid {
   display: inline-block;
-
   padding: 0.75rem 1.8rem;
-
   background: var(--navy);
-
   color: var(--white);
-
   text-decoration: none;
-
   font-size: 0.9rem;
 }
 
 .about-quote {
   background: var(--light);
-
   padding: 2.5rem;
-
   border-left: 4px solid var(--gold);
 }
 
 .about-quote blockquote {
   font-family: 'Playfair Display', serif;
-
   font-size: 1.15rem;
-
   color: var(--navy);
-
   line-height: 1.6;
-
   font-style: italic;
-
   margin-bottom: 1rem;
 }
 
 .about-quote cite {
   color: var(--muted);
-
   font-size: 0.85rem;
-
   font-style: normal;
 }
 
 
-/* =========================================================
-   SERVICES
-   ========================================================= */
+/* SERVICES */
 
 .services {
   background: var(--light);
-
   padding: 6rem 10%;
 }
 
 .services h2,
 .feedback h2 {
   font-family: 'Playfair Display', serif;
-
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-
   color: var(--navy);
-
   text-align: center;
-
   margin-bottom: 0.75rem;
 }
 
 .services > p,
 .feedback > p {
   text-align: center;
-
   color: var(--muted);
-
   font-size: 0.95rem;
-
   margin-bottom: 3rem;
 }
 
 .services-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 2rem;
 }
 
 .service-card {
   background: var(--white);
-
   padding: 2.5rem;
 }
 
 .service-card h3 {
   font-family: 'Playfair Display', serif;
-
   font-size: 1.2rem;
-
   color: var(--navy);
-
   margin-bottom: 0.75rem;
 }
 
 .service-card p {
   color: var(--muted);
-
   font-size: 0.9rem;
-
   line-height: 1.7;
 }
 
 
-/* =========================================================
-   NEWSLETTER
-   ========================================================= */
+/* NEWSLETTER */
 
 .newsletter {
   background: var(--navy);
-
   padding: 4rem 10%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 3rem;
 }
 
 .newsletter-text h3 {
   font-family: 'Playfair Display', serif;
-
   font-size: 1.5rem;
-
   color: var(--white);
-
   margin-bottom: 0.5rem;
 }
 
 .newsletter-text p {
   color: rgba(255,255,255,0.65);
-
   font-size: 0.9rem;
 }
 
 .logo-box {
   width: 80px;
   height: 80px;
-
   border: 2px solid var(--gold);
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   background: var(--white);
-
   flex-shrink: 0;
 }
 
 .logo-box span:first-child {
   font-family: 'Playfair Display', serif;
-
   font-size: 0.75rem;
-
   color: var(--navy);
-
   font-weight: 700;
 }
 
 .logo-box span:last-child {
   font-size: 0.55rem;
-
   color: var(--muted);
 }
 
 .newsletter-form {
   display: flex;
-
   min-width: 340px;
 }
 
 .newsletter-form input {
   flex: 1;
-
   padding: 0.75rem 1rem;
-
   border: 1px solid rgba(255,255,255,0.3);
-
   background: transparent;
-
   color: var(--white);
-
   font-size: 0.9rem;
-
   outline: none;
 }
 
@@ -452,24 +305,16 @@ nav a {
 
 .newsletter-form button {
   padding: 0.75rem 1.25rem;
-
   background: var(--gold);
-
   border: none;
-
   color: var(--navy);
-
   font-weight: 600;
-
   font-size: 0.85rem;
-
   cursor: pointer;
 }
 
 
-/* =========================================================
-   FEEDBACK
-   ========================================================= */
+/* FEEDBACK */
 
 .feedback {
   padding: 6rem 10%;
@@ -477,141 +322,99 @@ nav a {
 
 .feedback-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 2rem;
 }
 
 .feedback-card {
   background: var(--light);
-
   padding: 2rem;
 }
 
 .stars {
   color: var(--gold);
-
   font-size: 0.9rem;
-
   margin-bottom: 0.75rem;
 }
 
 .feedback-card p {
   color: var(--text);
-
   font-size: 0.9rem;
-
   line-height: 1.7;
-
   margin-bottom: 1rem;
 }
 
 .reviewer {
   display: flex;
-
   align-items: center;
-
   gap: 0.75rem;
 }
 
 .reviewer-avatar {
   width: 36px;
   height: 36px;
-
   border-radius: 50%;
-
   background: var(--navy);
-
   color: var(--white);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-size: 0.8rem;
-
   font-weight: 600;
 }
 
 .reviewer-name {
   font-size: 0.85rem;
-
   font-weight: 500;
 }
 
 .reviewer-loc {
   font-size: 0.75rem;
-
   color: var(--muted);
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 footer {
   background: #111520;
-
   padding: 4rem 10% 2rem;
 }
 
 .footer-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr;
-
   gap: 3rem;
-
   margin-bottom: 3rem;
 }
 
 .footer-col h4 {
   color: var(--white);
-
   font-size: 0.85rem;
-
   font-weight: 600;
-
   margin-bottom: 1rem;
 }
 
 .footer-col p,
 .footer-col a {
   color: rgba(255,255,255,0.5);
-
   font-size: 0.85rem;
-
   line-height: 2;
-
   text-decoration: none;
-
   display: block;
 }
 
 .footer-contact input,
 .footer-contact textarea {
   width: 100%;
-
   background: rgba(255,255,255,0.07);
-
   border: 1px solid rgba(255,255,255,0.15);
-
   color: var(--white);
-
   padding: 0.6rem 0.8rem;
-
   font-size: 0.85rem;
-
   margin-bottom: 0.5rem;
-
   outline: none;
-
   resize: none;
-
   font-family: inherit;
 }
 
@@ -621,77 +424,53 @@ footer {
 
 .footer-contact button {
   width: 100%;
-
   padding: 0.65rem;
-
   background: var(--gold);
-
   border: none;
-
   color: var(--navy);
-
   font-weight: 600;
-
   font-size: 0.85rem;
-
   cursor: pointer;
 }
 
 .social-links {
   display: flex;
-
   gap: 1rem;
-
   margin-top: 1rem;
 }
 
 .social-links a {
   color: rgba(255,255,255,0.5);
-
   text-decoration: none;
-
   font-size: 0.85rem;
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
-
   padding-top: 1.5rem;
 }
 
 .footer-bottom p {
   color: rgba(255,255,255,0.3);
-
   font-size: 0.8rem;
 }
 
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-/*
-   Maintain the desktop two-line heading while sufficient
-   horizontal space exists.
-
-   On smaller screens the About section becomes one column.
-*/
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
-
   .about {
     grid-template-columns: 1fr;
   }
 
-  .about-heading-primary {
+  .about-heading-primary,
+  .about-text p {
     white-space: normal;
   }
-
 }
 
-
 @media (max-width: 768px) {
-
+  .about,
   .services-grid,
   .feedback-grid,
   .footer-grid {
@@ -708,56 +487,35 @@ footer {
 
   .newsletter {
     flex-direction: column;
-
     padding: 3rem 6%;
   }
 
   .newsletter-form {
     min-width: unset;
-
     width: 100%;
   }
 
   .hero-cards {
     flex-direction: column;
   }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
 
-<!-- =======================================================
-     HERO
-     ======================================================= -->
-
 <section class="hero">
+  <h1>Legal Research, Writing, and Court&#8209;Filings</h1>
 
-  <h1>
-    Legal Research, Writing, and Court&#8209;Filings
-  </h1>
+  <p>Legal research, writing, and court-filings since 2012</p>
 
-  <p>
-    Legal research, writing, and court-filings since 2012
-  </p>
-
-  <a href="#contact" class="btn">
-    Request assistance
-  </a>
+  <a href="#contact" class="btn">Request assistance</a>
 
   <img
     src="logo.png"
     alt="OPALLC"
-    style="
-      width:200px;
-      height:200px;
-      margin-top:1.5rem;
-      object-fit:contain;
-    "
+    style="width:200px;height:200px;margin-top:1.5rem;object-fit:contain;"
   >
 
   <div class="hero-cards">
@@ -778,14 +536,8 @@ footer {
     </div>
 
   </div>
-
 </section>
 
-
-
-<!-- =======================================================
-     ABOUT
-     ======================================================= -->
 
 <section class="about">
 
@@ -802,120 +554,65 @@ footer {
     </h2>
 
     <p>
-      At Osterneck Paralegal Associates, LLC, we handle legal research,
-      writing, and court filings with care and precision.
+      At Osterneck Paralegal Associates, LLC, we handle legal research, writing, and court filings with care and precision.
     </p>
 
-    <a href="#contact" class="btn-solid">
-      Get Started
-    </a>
+    <a href="#contact" class="btn-solid">Get Started</a>
 
   </div>
 
-
   <div class="about-quote">
-
-    <blockquote>
-      "Reliable, thorough, and always on time."
-    </blockquote>
-
-    <cite>
-      — J. Smith
-    </cite>
-
+    <blockquote>"Reliable, thorough, and always on time."</blockquote>
+    <cite>— J. Smith</cite>
   </div>
 
 </section>
 
 
-
-<!-- =======================================================
-     SERVICES
-     ======================================================= -->
-
 <section class="services" id="services">
 
-  <h2>
-    Our Services
-  </h2>
+  <h2>Our Services</h2>
 
   <p>
     Expert legal research, writing, and court filings tailored for your needs.
   </p>
 
-
   <div class="services-grid">
 
     <div class="service-card">
-
-      <h3>
-        Court Filings
-      </h3>
-
+      <h3>Court Filings</h3>
       <p>
         Accurate and timely preparation and submission of court documents.
       </p>
-
     </div>
 
-
     <div class="service-card">
-
-      <h3>
-        Legal Research
-      </h3>
-
+      <h3>Legal Research</h3>
       <p>
         Thorough, precise research to support your case strategy and filings.
       </p>
-
     </div>
 
   </div>
-
 </section>
 
-
-
-<!-- =======================================================
-     NEWSLETTER
-     ======================================================= -->
 
 <section class="newsletter">
 
   <div class="newsletter-text">
-
-    <h3>
-      Stay Informed
-    </h3>
-
-    <p>
-      Get updates on legal insights and tips.
-    </p>
-
+    <h3>Stay Informed</h3>
+    <p>Get updates on legal insights and tips.</p>
   </div>
 
-
-  <img
-    src="logo.png"
-    alt="OPALLC"
-    style="height:160px;"
-  >
-
+  <img src="logo.png" alt="OPALLC" style="height:160px;">
 
   <form
     class="newsletter-form"
-    onsubmit="
-      window.location.href=
-      'mailto:legal@opallc.co?subject=Stay Informed Signup&body=Email: '
-      + this.email.value;
-      return false;
-    "
+    onsubmit="window.location.href='mailto:legal@opallc.co?subject=Stay Informed Signup&body=Email: '+this.email.value; return false;"
   >
 
     <input
       type="email"
-      name="email"
       placeholder="Enter email address"
     >
 
@@ -928,60 +625,33 @@ footer {
 </section>
 
 
-
-<!-- =======================================================
-     FEEDBACK
-     ======================================================= -->
-
 <section class="feedback" id="feedback">
 
-  <h2>
-    Feedback
-  </h2>
+  <h2>Feedback</h2>
 
-  <p>
-    What clients say about our paralegal services.
-  </p>
-
+  <p>What clients say about our paralegal services.</p>
 
   <div class="feedback-grid">
 
-
     <div class="feedback-card">
 
-      <div class="stars">
-        ★★★★★
-      </div>
+      <div class="stars">★★★★★</div>
 
       <p>
-        "Their legal research was thorough and clearly outlined,
-        which helped me prepare a stronger case efficiently."
+        "Their legal research was thorough and clearly outlined, which helped me prepare a stronger case efficiently."
       </p>
-
 
       <div class="reviewer">
 
         <img
           src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
-          alt="Client"
-          style="
-            width:36px;
-            height:36px;
-            border-radius:50%;
-            object-fit:cover;
-          "
+          style="width:36px;height:36px;border-radius:50%;object-fit:cover;"
+          alt=""
         >
 
         <div>
-
-          <div class="reviewer-name">
-            T. Smythe
-          </div>
-
-          <div class="reviewer-loc">
-            Denver, CO
-          </div>
-
+          <div class="reviewer-name">T. Smythe</div>
+          <div class="reviewer-loc">Denver, CO</div>
         </div>
 
       </div>
@@ -989,110 +659,65 @@ footer {
     </div>
 
 
-
     <div class="feedback-card">
 
-      <div class="stars">
-        ★★★★★
-      </div>
+      <div class="stars">★★★★★</div>
 
       <p>
-        "Osterneck Paralegal Associates, LLC made court filings seamless
-        and saved me valuable time and money. Highly recommend."
+        "Osterneck Paralegal Associates, LLC made court filings seamless and saved me valuable time and money. Highly recommend."
       </p>
-
 
       <div class="reviewer">
 
         <img
           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-          alt="Client"
-          style="
-            width:36px;
-            height:36px;
-            border-radius:50%;
-            object-fit:cover;
-          "
+          style="width:36px;height:36px;border-radius:50%;object-fit:cover;"
+          alt=""
         >
 
         <div>
-
-          <div class="reviewer-name">
-            A. Wertherson
-          </div>
-
-          <div class="reviewer-loc">
-            Boston, MA
-          </div>
-
+          <div class="reviewer-name">A. Wertherson</div>
+          <div class="reviewer-loc">Boston, MA</div>
         </div>
 
       </div>
 
     </div>
 
-
   </div>
-
 </section>
 
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
 
 <footer id="contact">
 
   <div class="footer-grid">
-
 
     <div class="footer-col">
 
       <img
         src="logo.png"
         alt="OPALLC"
-        style="
-          height:160px;
-          margin-bottom:1rem;
-        "
+        style="height:160px;margin-bottom:1rem;"
       >
 
       <p>
-        Osterneck Paralegal Associates, LLC.
-        Legal research, writing, and court filings since 2012.
+        Osterneck Paralegal Associates, LLC. Legal research, writing, and court filings since 2012.
       </p>
 
-
       <div class="social-links">
-
-        <a href="#">
-          Facebook
-        </a>
-
-        <a href="#">
-          Instagram
-        </a>
-
-        <a href="#">
-          TikTok
-        </a>
-
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
       </div>
 
     </div>
 
 
-
     <div class="footer-col">
 
-      <h4>
-        Contact
-      </h4>
+      <h4>Contact</h4>
 
-      <p>
-        Questions? Reach out anytime.
-      </p>
+      <p>Questions? Reach out anytime.</p>
 
       <a href="mailto:legal@opallc.co">
         legal@opallc.co
@@ -1105,24 +730,13 @@ footer {
     </div>
 
 
-
     <div class="footer-col">
 
-      <h4>
-        Send a Message
-      </h4>
-
+      <h4>Send a Message</h4>
 
       <form
         class="footer-contact"
-        onsubmit="
-          window.location.href=
-          'mailto:legal@opallc.co?subject=Website Inquiry&body=Name: '
-          + this.querySelector('input').value
-          + '%0AMessage: '
-          + this.querySelector('textarea').value;
-          return false;
-        "
+        onsubmit="window.location.href='mailto:legal@opallc.co?subject=Website Inquiry&body=Name: '+this.querySelector('input').value+'%0AMessage: '+this.querySelector('textarea').value; return false;"
       >
 
         <input
@@ -1142,18 +756,13 @@ footer {
 
     </div>
 
-
   </div>
 
 
-
   <div class="footer-bottom">
-
     <p>
-      © 2012. All rights reserved.
-      Osterneck Paralegal Associates, LLC
+      © 2012. All rights reserved. Osterneck Paralegal Associates, LLC
     </p>
-
   </div>
 
 </footer>
