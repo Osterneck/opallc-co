@@ -7,11 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --navy: #1a2744;
@@ -127,9 +123,14 @@ nav a {
 .about {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
+  column-gap: 4rem;
+  row-gap: 2.5rem;
   padding: 6rem 10%;
   align-items: center;
+}
+
+.about-text {
+  grid-column: 1;
 }
 
 .about-text h2 {
@@ -149,12 +150,19 @@ nav a {
   white-space: nowrap;
 }
 
-.about-text p {
+/*
+  BYLINE FIX:
+  It is deliberately allowed to extend across the available
+  section width instead of being constrained to the left grid column.
+*/
+.about-byline {
+  width: max-content;
+  max-width: none;
+  white-space: nowrap !important;
   color: var(--muted);
   line-height: 1.8;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  white-space: nowrap;
 }
 
 .btn-solid {
@@ -167,6 +175,8 @@ nav a {
 }
 
 .about-quote {
+  grid-column: 2;
+  grid-row: 1;
   background: var(--light);
   padding: 2.5rem;
   border-left: 4px solid var(--gold);
@@ -463,9 +473,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .about-text,
+  .about-quote {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .about-heading-primary,
-  .about-text p {
-    white-space: normal;
+  .about-byline {
+    white-space: normal !important;
+    width: auto;
   }
 }
 
@@ -504,22 +521,15 @@ footer {
 
 <body>
 
-
 <section class="hero">
   <h1>Legal Research, Writing, and Court&#8209;Filings</h1>
-
   <p>Legal research, writing, and court-filings since 2012</p>
-
   <a href="#contact" class="btn">Request assistance</a>
 
-  <img
-    src="logo.png"
-    alt="OPALLC"
-    style="width:200px;height:200px;margin-top:1.5rem;object-fit:contain;"
-  >
+  <img src="logo.png" alt="OPALLC"
+       style="width:200px;height:200px;margin-top:1.5rem;object-fit:contain;">
 
   <div class="hero-cards">
-
     <div class="hero-card">
       <h3>Research</h3>
       <p>Thorough case law and statute analysis</p>
@@ -534,7 +544,6 @@ footer {
       <h3>Filings</h3>
       <p>Accurate timely and efficient court filings</p>
     </div>
-
   </div>
 </section>
 
@@ -547,13 +556,12 @@ footer {
       <span class="about-heading-primary">
         Trusted Attorney&#8209;at&#8209;Law Support
       </span>
-
       <span class="about-heading-secondary">
         Since 2012
       </span>
     </h2>
 
-    <p>
+    <p class="about-byline">
       At Osterneck Paralegal Associates, LLC, we handle legal research, writing, and court filings with care and precision.
     </p>
 
@@ -570,7 +578,6 @@ footer {
 
 
 <section class="services" id="services">
-
   <h2>Our Services</h2>
 
   <p>
@@ -606,19 +613,11 @@ footer {
 
   <img src="logo.png" alt="OPALLC" style="height:160px;">
 
-  <form
-    class="newsletter-form"
-    onsubmit="window.location.href='mailto:legal@opallc.co?subject=Stay Informed Signup&body=Email: '+this.email.value; return false;"
-  >
+  <form class="newsletter-form"
+        onsubmit="window.location.href='mailto:legal@opallc.co?subject=Stay Informed Signup&body=Email: '+this.email.value; return false;">
 
-    <input
-      type="email"
-      placeholder="Enter email address"
-    >
-
-    <button type="submit">
-      Send Message
-    </button>
+    <input type="email" placeholder="Enter email address">
+    <button type="submit">Send Message</button>
 
   </form>
 
@@ -634,7 +633,6 @@ footer {
   <div class="feedback-grid">
 
     <div class="feedback-card">
-
       <div class="stars">★★★★★</div>
 
       <p>
@@ -655,12 +653,10 @@ footer {
         </div>
 
       </div>
-
     </div>
 
 
     <div class="feedback-card">
-
       <div class="stars">★★★★★</div>
 
       <p>
@@ -681,7 +677,6 @@ footer {
         </div>
 
       </div>
-
     </div>
 
   </div>
@@ -694,11 +689,8 @@ footer {
 
     <div class="footer-col">
 
-      <img
-        src="logo.png"
-        alt="OPALLC"
-        style="height:160px;margin-bottom:1rem;"
-      >
+      <img src="logo.png" alt="OPALLC"
+           style="height:160px;margin-bottom:1rem;">
 
       <p>
         Osterneck Paralegal Associates, LLC. Legal research, writing, and court filings since 2012.
@@ -734,23 +726,12 @@ footer {
 
       <h4>Send a Message</h4>
 
-      <form
-        class="footer-contact"
-        onsubmit="window.location.href='mailto:legal@opallc.co?subject=Website Inquiry&body=Name: '+this.querySelector('input').value+'%0AMessage: '+this.querySelector('textarea').value; return false;"
-      >
+      <form class="footer-contact"
+            onsubmit="window.location.href='mailto:legal@opallc.co?subject=Website Inquiry&body=Name: '+this.querySelector('input').value+'%0AMessage: '+this.querySelector('textarea').value; return false;">
 
-        <input
-          type="text"
-          placeholder="Name*"
-        >
-
-        <textarea
-          placeholder="Message*"
-        ></textarea>
-
-        <button type="submit">
-          Send Message
-        </button>
+        <input type="text" placeholder="Name*">
+        <textarea placeholder="Message*"></textarea>
+        <button type="submit">Send Message</button>
 
       </form>
 
@@ -766,7 +747,6 @@ footer {
   </div>
 
 </footer>
-
 
 </body>
 </html>
