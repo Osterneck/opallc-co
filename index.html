@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osterneck Paralegal Associates, LLC | opallc.co</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2744; --gold: #c9a84c; --light: #f7f7f5;
+  --mid: #e8e6e0; --text: #2c2c2c; --muted: #6b6b6b; --white: #ffffff;
+}
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+nav {
+  position: fixed; top: 0; width: 100%; background: var(--white);
+  border-bottom: 1px solid var(--mid); z-index: 100;
+  padding: 1rem 2rem; display: flex; justify-content: flex-end;
+}
+nav a { text-decoration: none; color: var(--navy); font-size: 0.9rem; font-weight: 500; }
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(26,39,68,0.72), rgba(26,39,68,0.72)),
+              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80') center/cover no-repeat;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 2rem; padding-top: 4rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--white); line-height: 1.15; max-width: 700px; margin-bottom: 1rem;
+}
+.hero p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 2rem; }
+.btn {
+  display: inline-block; padding: 0.8rem 2rem;
+  border: 2px solid var(--white); color: var(--white);
+  text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--white); color: var(--navy); }
+.hero-cards { display: flex; gap: 1px; margin-top: 3rem; width: 100%; max-width: 750px; }
+.hero-card { flex: 1; background: rgba(255,255,255,0.12); padding: 1.5rem 1rem; text-align: center; }
+.hero-card h3 { color: var(--white); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.4rem; }
+.hero-card p { color: rgba(255,255,255,0.65); font-size: 0.8rem; }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 6rem 10%; align-items: center; }
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem;
+}
+.about-text p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.btn-solid {
+  display: inline-block; padding: 0.75rem 1.8rem;
+  background: var(--navy); color: var(--white);
+  text-decoration: none; font-size: 0.9rem;
+}
+.about-quote { background: var(--light); padding: 2.5rem; border-left: 4px solid var(--gold); }
+.about-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: var(--navy); line-height: 1.6; font-style: italic; margin-bottom: 1rem;
+}
+.about-quote cite { color: var(--muted); font-size: 0.85rem; font-style: normal; }
+.services { background: var(--light); padding: 6rem 10%; }
+.services h2, .feedback h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--navy); text-align: center; margin-bottom: 0.75rem;
+}
+.services > p, .feedback > p { text-align: center; color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.service-card { background: var(--white); padding: 2.5rem; }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.75rem; }
+.service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+.newsletter {
+  background: var(--navy); padding: 4rem 10%;
+  display: flex; align-items: center; justify-content: space-between; gap: 3rem;
+}
+.newsletter-text h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 0.5rem; }
+.newsletter-text p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+.logo-box {
+  width: 80px; height: 80px; border: 2px solid var(--gold);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--white); flex-shrink: 0;
+}
+.logo-box span:first-child { font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--navy); font-weight: 700; }
+.logo-box span:last-child { font-size: 0.55rem; color: var(--muted); }
+.newsletter-form { display: flex; min-width: 340px; }
+.newsletter-form input {
+  flex: 1; padding: 0.75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.3); background: transparent;
+  color: var(--white); font-size: 0.9rem; outline: none;
+}
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+.newsletter-form button {
+  padding: 0.75rem 1.25rem; background: var(--gold);
+  border: none; color: var(--navy); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+}
+.feedback { padding: 6rem 10%; }
+.feedback-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.feedback-card { background: var(--light); padding: 2rem; }
+.stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.feedback-card p { color: var(--text); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+.reviewer { display: flex; align-items: center; gap: 0.75rem; }
+.reviewer-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--navy); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 600;
+}
+.reviewer-name { font-size: 0.85rem; font-weight: 500; }
+.reviewer-loc { font-size: 0.75rem; color: var(--muted); }
+footer { background: #111520; padding: 4rem 10% 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+.footer-col p, .footer-col a {
+  color: rgba(255,255,255,0.5); font-size: 0.85rem;
+  line-height: 2; text-decoration: none; display: block;
+}
+.footer-contact input, .footer-contact textarea {
+  width: 100%; background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white); padding: 0.6rem 0.8rem;
+  font-size: 0.85rem; margin-bottom: 0.5rem; outline: none; resize: none; font-family: inherit;
+}
+.footer-contact textarea { height: 80px; }
+.footer-contact button {
+  width: 100%; padding: 0.65rem; background: var(--gold);
+  border: none; color: var(--navy); font-weight: 600; font-size: 0.85rem; cursor: pointer;
+}
+.social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+.footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+@media (max-width: 768px) {
+  .about, .services-grid, .feedback-grid, .footer-grid { grid-template-columns: 1fr; }
+  .about, .services, .feedback, footer { padding-left: 6%; padding-right: 6%; }
+  .newsletter { flex-direction: column; padding: 3rem 6%; }
+  .newsletter-form { min-width: unset; width: 100%; }
+  .hero-cards { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav><a href="#">Home</a></nav>
+
+<section class="hero">
+  <h1>Legal Research, Writing, and Court&#8209;Filings</h1>
+  <p>Legal research, writing, and court-filings since 2012</p>
+  <a href="#contact" class="btn">Request assistance</a>
+  <div class="hero-cards">
+    <div class="hero-card"><h3>Research</h3><p>Thorough case law and statute analysis</p></div>
+    <div class="hero-card"><h3>Writing</h3><p>Detailed briefs and memoranda drafting</p></div>
+    <div class="hero-card"><h3>Filings</h3><p>Accurate and timely court filings</p></div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-text">
+    <h2>Trusted Attorney&#8209;at&#8209;Law Support Since 2012</h2>
+    <p>At Osterneck Paralegal Associates, LLC, we handle legal research, writing, and court filings with care and precision.</p>
+    <a href="#contact" class="btn-solid">Get Started</a>
+  </div>
+  <div class="about-quote">
+    <blockquote>"Reliable, thorough, and always on time."</blockquote>
+    <cite>— J. Smith</cite>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <p>Expert legal research, writing, and court filings tailored for your needs.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Court Filings</h3>
+      <p>Accurate and timely preparation and submission of court documents.</p>
+    </div>
+    <div class="service-card">
+      <h3>Legal Research</h3>
+      <p>Thorough, precise research to support your case strategy and filings.</p>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newsletter-text">
+    <h3>Stay Informed</h3>
+    <p>Get updates on legal insights and tips.</p>
+  </div>
+  <img src="logo.png" alt="OPALLC" style="height:80px;">
+  <form class="newsletter-form" onsubmit="return false;">
+    <input type="email" placeholder="Enter email address">
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section class="feedback" id="feedback">
+  <h2>Feedback</h2>
+  <p>What clients say about our paralegal services.</p>
+  <div class="feedback-grid">
+    <div class="feedback-card">
+      <div class="stars">★★★★★</div>
+      <p>"Their legal research was thorough and clearly outlined, which helped me prepare a stronger case efficiently."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">LR</div>
+        <div><div class="reviewer-name">L. Rogers</div><div class="reviewer-loc">Denver, CO</div></div>
+      </div>
+    </div>
+    <div class="feedback-card">
+      <div class="stars">★★★★★</div>
+      <p>"Osterneck Paralegal Associates, LLC made court filings seamless and saved me valuable time and money. Highly recommend."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">JM</div>
+        <div><div class="reviewer-name">J. Martin</div><div class="reviewer-loc">Boston, MA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <img src="logo.png" alt="OPALLC" style="height:80px;margin-bottom:1rem;">
+      <p>Osterneck Paralegal Associates, LLC. Legal research, writing, and court filings since 2012.</p>
+      <div class="social-links">
+        <a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Questions? Reach out anytime.</p>
+      <a href="mailto:legal@opallc.co">legal@opallc.co</a>
+      <a href="tel:7868102400">(786) 810-2400</a>
+    </div>
+    <div class="footer-col">
+      <h4>Send a Message</h4>
+      <form class="footer-contact" onsubmit="return false;">
+        <input type="text" placeholder="Name*">
+        <textarea placeholder="Message*"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2012. All rights reserved. Osterneck Paralegal Associates, LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>
